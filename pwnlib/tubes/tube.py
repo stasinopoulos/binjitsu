@@ -857,15 +857,8 @@ class tube(Timeout):
             'hooray_data'
             >>> context.clear()
         """
-        data = self.clean(timeout)
-
-        if all(c in string.printable for c in data):
-            for line in data.splitlines(True):
-                log.indented(repr(line))
-        else:
-            log.indented(fiddling.hexdump(data))
-
-        return data
+        with context.context.local(log_level='debug'):
+            return self.clean(timeout)
 
     def connect_input(self, other):
         """connect_input(other)
