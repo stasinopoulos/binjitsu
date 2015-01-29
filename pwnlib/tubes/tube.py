@@ -852,6 +852,7 @@ class tube(Timeout):
             >>> t.fileno        = lambda: 1234
             >>> with context.local(log_level='info'):
             ...     data = t.clean_and_log() #doctest: +ELLIPSIS
+            [DEBUG] Received 0xb bytes
                 'hooray_data'
             >>> data
             'hooray_data'
