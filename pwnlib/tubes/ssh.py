@@ -1,12 +1,20 @@
-import os, time, tempfile, sys, shutil, re, logging, threading
+import logging
+import os
+import re
+import shutil
+import sys
+import tempfile
+import threading
+import time
 
 from .. import term
 from ..context import context
-from ..util import hashes, misc
-from .sock import sock
-from .process import process
-from ..timeout import Timeout
 from ..log import getLogger
+from ..timeout import Timeout
+from ..util import hashes
+from ..util import misc
+from .process import process
+from .sock import sock
 
 log = getLogger(__name__)
 

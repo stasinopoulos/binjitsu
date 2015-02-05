@@ -11,7 +11,11 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-import sys, os, subprocess
+import os
+import subprocess
+import sys
+
+import pwnlib
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -72,7 +76,6 @@ copyright = u'2014, Gallopsled et al'
 # built documents.
 #
 # The short X.Y version.
-import pwnlib
 release = pwnlib.__version__
 version = release.rsplit('.', 1)[0]
 

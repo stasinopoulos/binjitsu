@@ -1,10 +1,16 @@
 #!/usr/bin/env python2
-import argparse, sys, os, types
+import argparse
+import os
+import sys
+import types
+
 import pwnlib
-from pwnlib import util
 import pwnlib.term.text as text
+from pwnlib import util
 from pwnlib.context import context
-from pwnlib.log import getLogger, install_default_handler
+from pwnlib.log import getLogger
+from pwnlib.log import install_default_handler
+
 install_default_handler()
 
 log = getLogger('pwnlib.commandline.shellcraft')

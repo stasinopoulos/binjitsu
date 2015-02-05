@@ -1,9 +1,13 @@
-from .tube import tube
-from ..timeout import Timeout
-from ..util.misc import which
+import fcntl
+import os
+import select
+import subprocess
+
 from ..context import context
 from ..log import getLogger
-import subprocess, fcntl, os, select
+from ..timeout import Timeout
+from ..util.misc import which
+from .tube import tube
 
 log = getLogger(__name__)
 
