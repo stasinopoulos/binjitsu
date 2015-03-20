@@ -385,7 +385,7 @@ class ssh(Timeout):
 
         Examples:
             >>> s =  ssh(host='example.pwnme',
-            ...         user='demouser',
+            ...         user='travis',
             ...         password='demopass')
             >>> sh = s.shell('/bin/sh')
             >>> sh.sendline('echo Hello; exit')
@@ -407,7 +407,7 @@ class ssh(Timeout):
 
         Examples:
             >>> s = ssh(host='example.pwnme',
-            ...         user='demouser',
+            ...         user='travis',
             ...         password='demopass')
             >>> sh = s.process('sh')
             >>> sh.sendline('echo Hello; exit')
@@ -495,7 +495,7 @@ if can_execve:
 
         Examples:
             >>> s =  ssh(host='example.pwnme',
-            ...         user='demouser',
+            ...         user='travis',
             ...         password='demopass')
             >>> py = s.run('python -i')
             >>> _ = py.recvuntil('>>> ')
@@ -522,7 +522,7 @@ if can_execve:
 
         Examples:
             >>> s =  ssh(host='example.pwnme',
-            ...         user='demouser',
+            ...         user='travis',
             ...         password='demopass')
             >>> print s.run_to_end('echo Hello; exit 17')
             ('Hello\n', 17)
@@ -547,7 +547,7 @@ if can_execve:
             >>> from pwn import *
             >>> l = listen()
             >>> s =  ssh(host='example.pwnme',
-            ...         user='demouser',
+            ...         user='travis',
             ...         password='demopass')
             >>> a = s.connect_remote(s.host, l.lport)
             >>> b = l.wait_for_connection()
@@ -570,7 +570,7 @@ if can_execve:
 
             >>> from pwn import *
             >>> s =  ssh(host='example.pwnme',
-            ...         user='demouser',
+            ...         user='travis',
             ...         password='demopass')
             >>> l = s.listen_remote()
             >>> a = remote(s.host, l.port)
@@ -588,7 +588,7 @@ if can_execve:
         Examples:
 
             >>> s =  ssh(host='example.pwnme',
-            ...         user='demouser',
+            ...         user='travis',
             ...         password='demopass')
             >>> print s['echo hello']
             hello
@@ -601,7 +601,7 @@ if can_execve:
         Examples:
 
             >>> s =  ssh(host='example.pwnme',
-            ...         user='demouser',
+            ...         user='travis',
             ...         password='demopass')
             >>> print repr(s('echo hello'))
             'hello'
@@ -614,12 +614,12 @@ if can_execve:
         Examples:
 
             >>> s =  ssh(host='example.pwnme',
-            ...         user='demouser',
+            ...         user='travis',
             ...         password='demopass')
             >>> s.echo('hello')
             'hello'
             >>> s.whoami()
-            'demouser'
+            'travis'
             >>> s.echo(['huh','yay','args'])
             'huh yay args'
         """
@@ -649,7 +649,7 @@ if can_execve:
         Example:
 
             >>> s =  ssh(host='example.pwnme',
-            ...         user='demouser',
+            ...         user='travis',
             ...         password='demopass')
             >>> s.connected()
             True
@@ -771,7 +771,7 @@ if can_execve:
             >>> with file('/tmp/bar','w+') as f:
             ...     f.write('Hello, world')
             >>> s =  ssh(host='example.pwnme',
-            ...         user='demouser',
+            ...         user='travis',
             ...         password='demopass')
             >>> s.download_data('/tmp/bar')
             'Hello, world'
@@ -829,7 +829,7 @@ if can_execve:
 
         Examoles:
             >>> s =  ssh(host='example.pwnme',
-            ...         user='demouser',
+            ...         user='travis',
             ...         password='demopass')
             >>> s.upload_data('Hello, world', '/tmp/foo')
             >>> print file('/tmp/foo').read()
@@ -956,7 +956,7 @@ if can_execve:
 
         Examples:
             >>> s =  ssh(host='example.pwnme',
-            ...         user='demouser',
+            ...         user='travis',
             ...         password='demopass')
             >>> cwd = s.set_working_directory()
             >>> s.ls()
